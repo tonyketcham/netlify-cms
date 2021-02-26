@@ -40,6 +40,18 @@ const i18nField = {
   oneOf: [{ type: 'boolean' }, { type: 'string', enum: Object.values(I18N_FIELD) }],
 };
 
+const requiredFields = {
+  type: 'array',
+  minItems: 1,
+  items: {
+    type: 'object',
+    properties: {
+      status: { type: 'string' },
+      enforced: { type: 'boolean' },
+    }
+  }
+}
+
 /**
  * Config for fields in both file and folder collections.
  */
@@ -177,6 +189,7 @@ function getConfigSchema() {
         enum: ['simple', 'editorial_workflow'],
         examples: ['editorial_workflow'],
       },
+      required_fields: requiredFields,
       slug: {
         type: 'object',
         properties: {
