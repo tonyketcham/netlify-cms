@@ -49,6 +49,11 @@ declare module 'netlify-cms-core' {
 
   export type CmsPublishMode = 'simple' | 'editorial_workflow';
 
+  export interface CmsRequiredField {
+  status: string;
+  enforced: boolean;
+}
+
   export type CmsSlugEncoding = 'unicode' | 'ascii';
 
   export interface CmsI18nConfig {
@@ -381,6 +386,7 @@ declare module 'netlify-cms-core' {
     media_folder_relative?: boolean;
     media_library?: CmsMediaLibrary;
     publish_mode?: CmsPublishMode;
+    required_fields?: CmsRequiredField[];
     load_config_file?: boolean;
     slug?: CmsSlug;
     i18n?: CmsI18nConfig;

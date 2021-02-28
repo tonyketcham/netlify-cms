@@ -4,6 +4,15 @@ backend:
 site_url: https://example.com
 
 publish_mode: editorial_workflow
+
+required_fields:
+  - status: draft
+    enforced: false
+  - status: pending_review
+    enforced: false 
+  - status: pending_publish
+    enforced: true
+
 media_folder: assets/uploads
 
 collections: # A list of collections the CMS should be able to edit
